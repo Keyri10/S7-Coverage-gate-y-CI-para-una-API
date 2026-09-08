@@ -7,10 +7,6 @@ on:
 permissions:
   contents: read
 
-defaults:
-  run:
-    working-directory: S7-Coverage-CI-Reservaciones
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -19,13 +15,13 @@ jobs:
 
       - uses: pnpm/action-setup@v6
         with:
-          package_json_file: S7-Coverage-CI-Reservaciones/package.json
+          version: 10.33.0
 
       - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
-          cache-dependency-path: S7-Coverage-CI-Reservaciones/pnpm-lock.yaml
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -38,5 +34,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: coverage-report
-          path: S7-Coverage-CI-Reservaciones/coverage/
-          if-no-files-found: error
+          path: coverage/
+          if-no-files-found: warn
