@@ -1,0 +1,22 @@
+{
+  "name": "s7-coverage-ci-reservaciones",
+  "version": "1.0.0",
+  "description": "Reservaciones de salas con pruebas unitarias, de integración y cobertura Vitest",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@vitest/coverage-v8": "^4.1.11",
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.11"
+  }
+}
